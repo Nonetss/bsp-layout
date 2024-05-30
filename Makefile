@@ -1,5 +1,3 @@
-# bsp-layout
-
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 SRCPREFIX = ${PREFIX}/lib
