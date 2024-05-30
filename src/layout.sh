@@ -237,10 +237,8 @@ reload_layouts() {
 
 # () -> ()
 select_layout_with_rofi() {
-  desktop="${1:-`get_focused_desktop`}"
 
-  # Ejecuta el script de rofi y captura la selección del usuario
-  selected_layout=$(./utils/rofi_layout.sh)
+  $(./utils/rofi_layout.sh)
 
 }
 
@@ -261,7 +259,7 @@ main () {
     get)               get_layout "$1" ;;
     remove)            remove_listener "$1" ;;
     layouts)           list_layouts ;;
-    select)            select_layout_with_rofi "$@" ;; # Nuevo comando para seleccionar layout con rofi
+    select)            select_layout_with_rofi ;; # Nuevo comando para seleccionar layout con rofi
     -h|--help|help)    man bsp-layout ;;
     -v|version)        echo "$VERSION" ;;
     *)                 echo -e "Unknown subcommand. Run bsp-layout help" && exit 1 ;;
